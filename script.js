@@ -24,3 +24,22 @@ const operate = function(num1, num2){
 // num1 variable
 // operator variable
 // num2 variable
+
+
+// Make the calculator button grid
+const numberButtons = document.getElementById("numbers");
+
+const row = 3
+const col = 3
+
+const containerSize = 12;
+const cellSize = containerSize / row;
+
+for (i=0; i < row*col; i++){
+    const cell = document.createElement("button");
+    cell.classList.add("cell")
+    cell.style.width = `${cellSize}vw`
+    cell.textContent = i+1;
+
+    numberButtons.appendChild(cell)
+}
