@@ -12,13 +12,8 @@ body{
     background-color: gray;
     height:65vh;
     width:20vw;
-    margin-top: 5%;
     padding:2%;
 }
-
-/* .inner-container{
-    height:
-} */
 
 #display{
     background-color: white;
@@ -29,12 +24,23 @@ body{
 #buttons{
     background-color: lightgray;
     display:flex;
+    flex-direction: column;
     height: 100%;
 }
 
 #left-buttons{
     width:16vw;
     background-color: brown;
+    display:flex;
+}
+
+.top{
+    display: flex;
+}
+
+#operators button{
+    display:block;
+    width:4vw;
 }
 
 #numbers{
@@ -43,5 +49,29 @@ body{
 
 #right-buttons{
     height: auto;
-    margin-left: auto;
+    display: flex;
+    flex-direction: column;
 }
+
+#equals button{
+    height:100%;
+}
+
+#backspace button, #equals button{
+    width:4vw;
+}
+
+
+.bottom{
+    display:flex;
+}
+
+.bottom button{
+    width:4vw;
+}
+
+.bottom .zero{
+    width: 8vw;
+}
+
+

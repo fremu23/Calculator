@@ -43,3 +43,5 @@ for (i=0; i < row*col; i++){
 
     numberButtons.appendChild(cell)
 }
+
+
