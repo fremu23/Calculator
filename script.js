@@ -45,3 +45,8 @@ for (i=0; i < row*col; i++){
 }
 
 
+// Handling button clicks
+document.getElementById("add").addEventListener("click",)
+document.getElementById("subtract").addEventListener("click",)
+document.getElementById("multiply").addEventListener("click",)
+document.getElementById("divide").addEventListener("click",)

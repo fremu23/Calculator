@@ -8,45 +8,43 @@
 </head>
 <body>
 
-    <div class = "container">
-        <div class = "inner-container">
-            <div id = "display">
-                <h1></h1>
-            </div>
-            <div id = "buttons">
-                <div class = "top">
-                    <div id = "left-buttons">
-                        <div id="numbers">
-                            
-                        </div>
-                        <div id="operators">
-                            <button id = "add">+</button>
-                            <button id = "subtract">-</button>
-                            <button id = "multiply">x</button>
-                        </div>
+    <main class = "container">
+        <header id = "display">
+            <h1>h</h1>
+        </header>
+
+        <!-- Buttons Section-->
+        <div class = "buttons-grid">
+            <div id = "left-buttons">
+                <!-- Numbers and Operator Buttons -->
+                <div class = "button-row-top">
+                    <div id="numbers">
+                        <!-- Numbers generated from JS -->
                     </div>
-                    <div id = "right-buttons">
-                        <div id = "backspace">
-                            <button>CE</button>
-                        </div>
-                        <div id = "equals">
-                            <button>=</button>
-                        </div>
+                    <div id="operators">
+                        <button id = "add">+</button>
+                        <button id = "subtract">-</button>
+                        <button id = "multiply">x</button>
                     </div>
                 </div>
-                <div class = "bottom">
+                <!-- Buttom Row Buttons -->
+                <div class = "button-row-bottom">
                     <button class="zero">0</button>
                     <button id = "backspace">Back</button>
                     <button id = "divide">/</button>
                 </div>
             </div>
+            <!-- Right Column Buttons -->
+            <div id = "right-buttons">
+                <div id = "clear">
+                    <button>CE</button>
+                </div>
+                <div id = "equals">
+                    <button>=</button>
+                </div>
+            </div>
         </div>
-    </div>
-
-
-
-
-
+    </main>
 
     <script src="script.js"></script>
     
