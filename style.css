@@ -15,10 +15,11 @@ body{
     padding:2%;
 }
 
-#display{
+#input-box{
     background-color: white;
-    width:100%;
+    width:98%;
     text-align: right;
+    margin-bottom: 5%;
 }
 
 .buttons-grid{

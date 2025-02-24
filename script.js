@@ -25,6 +25,7 @@ const operate = function(num1, num2){
 // operator variable
 // num2 variable
 
+const inputBox = document.getElementById("input-box");
 
 // Make the calculator button grid
 const numberButtons = document.getElementById("numbers");
@@ -35,18 +36,45 @@ const col = 3
 const containerSize = 12;
 const cellSize = containerSize / row;
 
+let numberTyped = false;
+
 for (i=0; i < row*col; i++){
     const cell = document.createElement("button");
-    cell.classList.add("cell")
+    cell.id = i+1
     cell.style.width = `${cellSize}vw`
     cell.textContent = i+1;
+
+    cell.addEventListener("click", () => {
+        inputBox.value += cell.textContent
+        numberTyped = true;
+    });
 
     numberButtons.appendChild(cell)
 }
 
 
+
 // Handling button clicks
-document.getElementById("add").addEventListener("click",)
-document.getElementById("subtract").addEventListener("click",)
-document.getElementById("multiply").addEventListener("click",)
-document.getElementById("divide").addEventListener("click",)
+let operator = false;
+
+const addBtn = document.getElementById("add")
+const subBtn = document.getElementById("subtract")
+const mtplyBtn = document.getElementById("multiply")
+const divBtn = document.getElementById("divide")
+
+addBtn.addEventListener("click", () => {
+    if (!operator && numberTyped){
+        inputBox.value += addBtn.textContent;
+        operator = true;
+    }
+})
+
+// Clear Entry
+document.getElementById("clear").addEventListener("click", () => {
+    inputBox.value = " ";
+    operator = false;
+    numberTyped = false;
+    console.log("hi");
+});
+
+
