@@ -1,3 +1,6 @@
+// Reference the Input Box
+const inputBox = document.getElementById("input-box");
+
 const add = function(num1, num2){
     return num1 + num2;
 }
@@ -14,24 +17,25 @@ const divide = function(num1, num2){
     return num1 / num2;
 }
 
-const operate = function(num1, num2){
-    // if "add" {add}
-    // else if "subtract" {subtract}
-    // else if "multiply" {multiply}
-    // else if "divide" {divide}
-}
+const operate = function(num1, operator, num2){
+    let result;
+    if (operator == "+"){
+        result = add(num1,num2);
+    } else if (operator == "-"){
+        result = subtract(num1, num2);
+    } else if (operator == "x"){
+        result = multiply(num1,num2);
+    } else {
+        result = divide(num1, num2);
+    }
 
-// num1 variable
-// operator variable
-// num2 variable
+    inputBox.value = "";
+
+    inputBox.value = result;
+};
 
 // Array of Operators
 operators = ["+", "-", "x", "/"];
-
-
-// Reference the Input Box
-const inputBox = document.getElementById("input-box");
-
 
 // Make the calculator button grid
 const numberButtons = document.getElementById("numbers");
@@ -92,6 +96,27 @@ document.addEventListener('click', (event) => {
             numberTyped = false;
         }
         inputBox.value = currentVal.slice(0, -1);
+    }
+
+    // Equals Buttons
+    if (clicked.matches("#equals")){
+        const currentVal = inputBox.value;
+        const findOperator = currentVal.match(/[+\-x/]/);
+
+        // Splitting operation for the operate function
+        if (findOperator) {
+            let preOperator = Number(currentVal.slice(0, findOperator.index));
+            let postOperator = Number(currentVal.slice(findOperator.index+1));
+            let operator = currentVal[findOperator.index];
+
+            // Reset Booleans
+            numberTyped = true;
+            operator = false;
+
+            operate(preOperator, operator, postOperator);
+
+
+        }
     }
 })
 
