@@ -38,12 +38,12 @@ body{
     font-size: large;
 }
 
-#clear button{
+#clear{
     height:8vh;  
     width:4vw;
 }
 
-#equals button{
+#equals{
     height:24vh;
     width:4vw;
 }
