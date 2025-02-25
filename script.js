@@ -25,7 +25,7 @@ const operate = function(num1, operator, num2){
         result = subtract(num1, num2);
     } else if (operator == "x"){
         result = multiply(num1,num2);
-    } else {
+    } else if (operator == "/"){
         result = divide(num1, num2);
     }
 
@@ -70,6 +70,12 @@ let operator = false;
 document.addEventListener('click', (event) => {
     const clicked = event.target;
 
+    // Number 0 
+    if (clicked.matches(".zero")){
+        inputBox.value += clicked.textContent;
+        numberTyped = true;
+    }
+
     // Operators to input box
     if (clicked.matches('#add, #subtract, #multiply, #divide')){
         if (!operator && numberTyped){
@@ -94,7 +100,8 @@ document.addEventListener('click', (event) => {
             operator = false;
         } else if (secondLastChar == ""){
             numberTyped = false;
-        }
+        } 
+        
         inputBox.value = currentVal.slice(0, -1);
     }
 
@@ -107,13 +114,12 @@ document.addEventListener('click', (event) => {
         if (findOperator) {
             let preOperator = Number(currentVal.slice(0, findOperator.index));
             let postOperator = Number(currentVal.slice(findOperator.index+1));
-            let operator = currentVal[findOperator.index];
-
+            let operatorType = currentVal[findOperator.index];
             // Reset Booleans
             numberTyped = true;
             operator = false;
 
-            operate(preOperator, operator, postOperator);
+            operate(preOperator, operatorType, postOperator);
 
 
         }

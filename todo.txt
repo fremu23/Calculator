@@ -1,0 +1,11 @@
+- Negative Numbers
+    - Handling operations
+    - Typing Negative Numbers
+
+- Backspacing negative numbers 
+    - Simultaneously 
+
+
+- Aesthetics 
+    - Border radius
+    - Border width & colour
